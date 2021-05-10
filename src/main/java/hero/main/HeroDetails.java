@@ -10,10 +10,17 @@ public class HeroDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 	private Long peso;
 	private Long altura;
 	private String descripcion;
 	
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	public Long getPeso() {
 		return peso;
 	}

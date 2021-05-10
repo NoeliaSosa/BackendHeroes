@@ -31,7 +31,7 @@ public class HeroController {
 		return heroRepository.findById(id).get();
 	}
 
-	@PutMapping("/get/{id}")
+	@PutMapping("/put/{id}")
 	public ResponseEntity<Object> updateHero(@RequestBody Hero hero, @PathVariable long id) {
 		hero.setId(id);
 		heroRepository.save(hero);

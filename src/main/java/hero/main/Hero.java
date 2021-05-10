@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Hero {
@@ -13,8 +15,32 @@ public class Hero {
     private Long id;
  
     private String name;
+    
+    @OneToOne
+    @JoinColumn(name = "detalleId")
+    private HeroDetails detalles;
+    
+    @OneToOne
+    @JoinColumn(name = "direccionId")
+    private HeroDireccion direccion;
  
-    public Long getId() {
+    public HeroDetails getDetalles() {
+		return detalles;
+	}
+
+	public void setDetalles(HeroDetails detalles) {
+		this.detalles = detalles;
+	}
+
+	public HeroDireccion getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(HeroDireccion direccion) {
+		this.direccion = direccion;
+	}
+
+	public Long getId() {
         return id;
     }
  

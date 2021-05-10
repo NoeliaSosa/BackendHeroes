@@ -10,8 +10,16 @@ public class HeroDireccion {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-	private String direccion;
+    private Long id;
+    
+    private String direccion;
 
+    public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	public String getDireccion() {
 		return direccion;
 	}
