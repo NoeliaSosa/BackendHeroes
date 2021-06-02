@@ -11,48 +11,44 @@ import javax.persistence.OneToOne;
 public class Hero {
  
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
  
     private String name;
-    
-    @OneToOne
-    @JoinColumn(name = "detalleId")
-    private HeroDetails detalles;
-    
-    @OneToOne
-    @JoinColumn(name = "direccionId")
-    private HeroDireccion direccion;
- 
-    public HeroDetails getDetalles() {
-		return detalles;
-	}
 
-	public void setDetalles(HeroDetails detalles) {
-		this.detalles = detalles;
-	}
+    private Long detalle;
 
-	public HeroDireccion getDireccion() {
-		return direccion;
-	}
+    private Long direccion;
 
-	public void setDireccion(HeroDireccion direccion) {
-		this.direccion = direccion;
-	}
-
-	public Long getId() {
+    public Long getId() {
         return id;
     }
- 
+
     public void setId(Long id) {
         this.id = id;
     }
- 
+
+    public String getName() {
+        return name;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
-     
-    public String getName() {
-        return name;
+
+    public Long getDetalle() {
+        return detalle;
+    }
+
+    public void setDetalle(Long detalle) {
+        this.detalle = detalle;
+    }
+
+    public Long getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(Long direccion) {
+        this.direccion = direccion;
     }
 }
